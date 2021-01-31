@@ -124,3 +124,71 @@ nav ul li a:hover, a.active{
     display: flex;
     justify-content: space-between;
 }
+
+/* Additional CSS for Assignment */
+
+.booking-success{
+    display: none;
+    position: absolute;
+}
+
+#book-now {
+    transition: all .5s;
+}
+
+.table {
+    width: 100%;
+    text-align: left;
+    margin: 10px auto;
+    border-collapse: collapse;
+}
+.table thead{
+    background: #3352F2;
+    color: #fff;
+}
+
+.table thead th,
+.table tbody td,
+.table tfoot td{
+    /* border: #3352F2 1px solid; */
+}
+.table  td:nth-child(2){
+    text-align: center;
+}
+.table td:nth-child(3){
+    text-align: right;
+}
+
+.table tfoot{
+    font-weight: 700;
+    border: 1px solid #3352F2;
+    border-top: 2px solid #3352F2;
+    background-color: rgba(51, 83, 242, 0.3);
+}
+.table tfoot tr:nth-child(3){
+    background-color: rgba(51, 83, 242, 0.9);
+    color: #fff;
+}
+
+.table td, .table th{
+    padding: 5px;
+    border:transparent 1px solid;
+}
+#warning{
+    color: red;
+    margin: 10px auto;
+}
+
+/* Hiding Arrows From Input Number*/
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

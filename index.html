@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="bookingBtn()">
     <!--Header and Menu Section-->
     <header class="container">
         <nav>
@@ -41,7 +41,7 @@
             <div class="inputs">
                 <div class="input-group">
                     <label" for="">Departure</label>
-                    <input class="inp-style" type="date" name="">
+                        <input class="inp-style" type="date" name="">
                 </div>
                 <div class="input-group">
                     <label for="">Return</label>
@@ -51,20 +51,23 @@
             <div class="input-group f-class">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <input id="first-class" class="inp-style inp-width" type="number" value="0" name="">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span>+</span> <span style="font-size: 36px;">-</span> </p>
+                    <p> <span onclick="handleTicketBooking('first',true)">+</span> <span
+                            onclick="handleTicketBooking('first', false)" style="font-size: 36px;">-</span> </p>
                 </div>
             </div>
-            
+
             <div class="input-group f-class">
                 <div>
                     <label for="">Economy ($100)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <input id="economy-class" class="inp-style inp-width" type="number" value="0" name="">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span>+</span> <span style="font-size: 36px;">-</span> </p>
+                    <!-- <p> <span>+</span> <span style="font-size: 36px;">-</span> </p> -->
+                    <p> <span onclick="handleTicketBooking('economy',true)">+</span> <span
+                            onclick="handleTicketBooking('economy',false)" style="font-size: 36px;">-</span> </p>
                 </div>
             </div>
             <div class="calculations">
@@ -73,7 +76,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$500</p>
+                        <p id="subtotal">$0</p>
                     </div>
                 </div>
 
@@ -82,7 +85,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$50</p>
+                        <p id="vat-charge">$0</p>
                     </div>
                 </div>
                 <hr>
@@ -91,20 +94,67 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$550</p>
+                        <p id="total">$0</p>
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button onclick="bookNow()" id="book-now" class="btn-style">Book Now</button>
+            <p id="warning"></p>
+        </div>
+
+        <div class="booking-form booking-success">
+            <h2>Welcome! </h2> <h3>You Just Booked your Tickets!</h3>
+            <p>You have booked the followign tickets successfully.</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Tickets</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>First Class($150)</td>
+                        <td id="first-class-ticket">01</td>
+                        <td id="first-class-price">$000</td>
+                    </tr>
+                    <tr>
+                        <td>Economy Class ($100)</td>
+                        <td id="economy-class-ticket">01</td>
+                        <td id="economy-class-price">$000</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td id="total-ticket">2</td>
+                        <td id="subtotal-price">$000</td>
+                    </tr>
+                    <tr>
+                        <td>Vat (10%)</td>
+                        <td>&nbsp;</td>
+                        <td id="applied-vat">$000</td>
+                    </tr>
+                    <tr>
+                        <td>Total Price</td>
+                        <td>&nbsp;</td>
+                        <td id="grand-total">$000</td>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
 
         <div class="booking-content">
-            <h1>discover <br> around the world</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
+            <h1 class="text-shadow">discover <br> around the world</h1>
+            <p class="text-shadow">Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam
+                fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis
+                eaque deserunt nobise voluptatibus quam</p>
         </div>
-    </section>
+    </main>
 
     <!--Thank You-->
+    <script src="script.js"></script>
 </body>
 
 </html>
